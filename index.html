@@ -9,23 +9,205 @@
   />
   <title>YITEISM | Youth in Technology and Engineering</title>
 
+
+  <!-- =====================================================
+       TYPOGRAPHY
+       Prototype uses Google Fonts.
+       Production build can self-host these fonts for performance.
+       ===================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
     :root {
-      --primary: #0b6b57;
-      --primary-dark: #064c3e;
-      --primary-soft: #e9f6f2;
-      --secondary: #f2b134;
-      --secondary-soft: #fff7e7;
-      --ink: #11231d;
-      --muted: #65756f;
-      --surface: #ffffff;
-      --surface-alt: #f6faf8;
-      --border: #dbe8e3;
-      --shadow: 0 20px 50px rgba(11, 107, 87, 0.10);
-      --radius-lg: 28px;
-      --radius-md: 18px;
-      --radius-sm: 12px;
-      --max: 1180px;
+      /* ===================================================
+         YITEISM DESIGN SYSTEM V1
+         =================================================== */
+
+      /* ---------------- Brand ---------------- */
+
+      --color-brand-primary: #0b6b57;
+      --color-brand-primary-dark: #064c3e;
+      --color-brand-primary-light: #e9f6f2;
+
+      --color-brand-accent: #f2b134;
+      --color-brand-accent-light: #fff7e7;
+
+
+      /* ---------------- Neutral palette ---------------- */
+
+      --color-neutral-950: #0d1f19;
+      --color-neutral-900: #11231d;
+      --color-neutral-800: #253a32;
+      --color-neutral-700: #3f544c;
+      --color-neutral-600: #65756f;
+      --color-neutral-500: #81908a;
+      --color-neutral-400: #a9b5b0;
+      --color-neutral-300: #cbd6d1;
+      --color-neutral-200: #dbe8e3;
+      --color-neutral-100: #edf4f1;
+      --color-neutral-50: #f6faf8;
+      --color-white: #ffffff;
+
+
+      /* ---------------- Semantic colors ---------------- */
+
+      --color-text-heading: var(--color-neutral-900);
+      --color-text-body: var(--color-neutral-700);
+      --color-text-muted: var(--color-neutral-600);
+
+      --color-surface-primary: var(--color-white);
+      --color-surface-secondary: var(--color-neutral-50);
+
+      --color-border: var(--color-neutral-200);
+
+      --color-success: #13795b;
+      --color-warning: #b7791f;
+      --color-danger: #b42318;
+
+
+      /* ---------------- Typography ---------------- */
+
+      --font-heading:
+        "Plus Jakarta Sans",
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        sans-serif;
+
+      --font-body:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      --font-weight-regular: 400;
+      --font-weight-medium: 500;
+      --font-weight-semibold: 600;
+      --font-weight-bold: 700;
+      --font-weight-extrabold: 800;
+
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-lg: 1.125rem;
+      --text-xl: 1.25rem;
+
+      --text-heading-sm:
+        clamp(1.75rem, 4vw, 2.5rem);
+
+      --text-heading-md:
+        clamp(2.25rem, 6vw, 4rem);
+
+      --text-heading-lg:
+        clamp(3rem, 9vw, 6.5rem);
+
+
+      /* ---------------- Spacing scale ---------------- */
+
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.5rem;
+      --space-6: 2rem;
+      --space-7: 3rem;
+      --space-8: 4rem;
+      --space-9: 5rem;
+      --space-10: 7.5rem;
+
+
+      /* ---------------- Layout ---------------- */
+
+      --container-sm: 720px;
+      --container-md: 960px;
+      --container-lg: 1180px;
+      --container-xl: 1320px;
+
+      --page-gutter-mobile: 1rem;
+      --page-gutter-tablet: 1.5rem;
+      --page-gutter-desktop: 2rem;
+
+      --section-space-mobile: 5rem;
+      --section-space-desktop: 7.5rem;
+
+
+      /* ---------------- Radius ---------------- */
+
+      --radius-xs: 0.5rem;
+      --radius-sm: 0.75rem;
+      --radius-md: 1.125rem;
+      --radius-lg: 1.75rem;
+      --radius-xl: 2.5rem;
+      --radius-pill: 999px;
+
+
+      /* ---------------- Shadows ---------------- */
+
+      --shadow-sm:
+        0 8px 24px rgba(11, 54, 42, 0.06);
+
+      --shadow-md:
+        0 20px 50px rgba(11, 54, 42, 0.10);
+
+      --shadow-lg:
+        0 35px 80px rgba(11, 54, 42, 0.14);
+
+
+      /* ---------------- Motion ---------------- */
+
+      --ease-standard:
+        cubic-bezier(0.2, 0.8, 0.2, 1);
+
+      --duration-fast: 160ms;
+      --duration-normal: 260ms;
+      --duration-slow: 500ms;
+
+
+      /* ---------------- Layering ---------------- */
+
+      --z-base: 1;
+      --z-header: 100;
+      --z-dropdown: 200;
+      --z-modal: 1000;
+
+
+      /* ===================================================
+         LEGACY COMPATIBILITY
+
+         Existing prototype components temporarily use these
+         names. They will be removed during final refactor.
+         =================================================== */
+
+      --primary: var(--color-brand-primary);
+      --primary-dark: var(--color-brand-primary-dark);
+      --primary-soft: var(--color-brand-primary-light);
+
+      --secondary: var(--color-brand-accent);
+      --secondary-soft: var(--color-brand-accent-light);
+
+      --ink: var(--color-text-heading);
+      --muted: var(--color-text-muted);
+
+      --surface: var(--color-surface-primary);
+      --surface-alt: var(--color-surface-secondary);
+
+      --border: var(--color-border);
+
+      --shadow: var(--shadow-md);
+
+      --radius-sm: 0.75rem;
+      --radius-md: 1.125rem;
+      --radius-lg: 1.75rem;
+
+      --max: var(--container-lg);
     }
 
     * {
@@ -39,11 +221,40 @@
     }
 
     body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: var(--font-body);
       background: var(--surface);
       color: var(--ink);
       line-height: 1.6;
     }
+
+    /* =====================================================
+       GLOBAL TYPOGRAPHY
+       ===================================================== */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-heading);
+
+      color: var(--color-text-heading);
+
+      font-weight: var(--font-weight-bold);
+
+      text-wrap: balance;
+    }
+
+    p {
+      color: var(--color-text-body);
+    }
+
+    strong {
+      font-weight: var(--font-weight-bold);
+    }
+
+
 
     img {
       display: block;
