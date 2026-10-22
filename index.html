@@ -1439,105 +1439,138 @@
 
 /* YITEISM ABOUT V2 START */
 
+/* =====================================================
+   YITEISM — WHO WE ARE
+   Editorial institutional layout
+   ===================================================== */
+
 .yiteism-about-v2 {
-  padding: 120px 0;
+  padding: clamp(5rem, 9vw, 8rem) 0;
   background: #ffffff;
 }
 
 
-/* =====================================
+/* -----------------------------
    INTRO
-===================================== */
+   ----------------------------- */
 
 .about-v2-intro {
   display: grid;
-  grid-template-columns: 160px minmax(0, 1.3fr) minmax(280px, .7fr);
-  gap: 45px;
-  align-items: start;
-  padding-bottom: 75px;
-}
+  grid-template-columns: 1fr;
 
+  gap: 2rem;
+
+  padding-bottom:
+    clamp(3.5rem, 7vw, 6rem);
+}
 
 .about-v2-label {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  color: #6e7e77;
-  font-size: 10px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: .11em;
-}
+  align-items: center;
 
+  gap: 0.8rem;
+
+  color: var(--color-brand-primary);
+
+  font-size: 0.67rem;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
 
 .about-v2-label span {
-  color: var(--color-brand-primary);
-  font-size: 12px;
+  color: var(--color-brand-accent);
 }
-
 
 .about-v2-heading h2 {
+  max-width: 880px;
+
   margin: 0;
-  max-width: 780px;
-  color: #10251e;
-  font-size: clamp(36px, 4.8vw, 65px);
-  line-height: 1.04;
-  letter-spacing: -.052em;
-  font-weight: 760;
+
+  color: var(--color-brand-primary-dark);
+
+  font-size: clamp(2.7rem, 5vw, 5.25rem);
+  font-weight: 650;
+
+  line-height: 0.98;
+  letter-spacing: -0.052em;
 }
 
-
 .about-v2-heading h2 em {
-  color: var(--color-brand-primary);
+  color: var(--color-brand-accent);
+
   font-style: normal;
 }
 
-
-.about-v2-intro-copy p {
-  margin: 0 0 16px;
-  color: #66766f;
-  font-size: 14px;
-  line-height: 1.75;
+.about-v2-intro-copy {
+  max-width: 560px;
 }
 
+.about-v2-intro-copy p {
+  margin: 0 0 1rem;
+
+  color: #5f6977;
+
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
 
 .about-v2-text-link {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  margin-top: 10px;
+
+  gap: 0.75rem;
+
+  margin-top: 0.8rem;
+
   color: var(--color-brand-primary);
+
+  font-size: 0.69rem;
+  font-weight: 800;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
   text-decoration: none;
-  font-size: 12px;
-  font-weight: 900;
+}
+
+.about-v2-text-link span {
+  transition: transform 180ms ease;
+}
+
+.about-v2-text-link:hover span {
+  transform: translateX(4px);
 }
 
 
-/* =====================================
-   MAIN BLOCK
-===================================== */
+/* -----------------------------
+   MAIN EDITORIAL BLOCK
+   ----------------------------- */
 
 .about-v2-main {
   display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: 24px;
-  align-items: stretch;
+  grid-template-columns: 1fr;
+
+  gap: 0;
 }
 
 
 /* PHOTO */
 
 .about-v2-photo {
-  min-height: 610px;
   position: relative;
+
+  min-height: 540px;
+
   overflow: hidden;
-  border-radius: 30px;
+
+  border-radius: 0;
 
   background:
-    url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=90")
+    url("assets/media/about-yiteism.jpg")
     center / cover no-repeat;
 }
-
 
 .about-v2-photo-overlay {
   position: absolute;
@@ -1545,390 +1578,451 @@
 
   background:
     linear-gradient(
-      to top,
-      rgba(4, 37, 29, .88),
-      rgba(4, 37, 29, .04) 60%
+      180deg,
+      rgba(27, 47, 75, 0.02) 32%,
+      rgba(27, 47, 75, 0.72) 100%
     );
 }
 
-
 .about-v2-photo-caption {
   position: absolute;
-  left: 32px;
-  right: 32px;
-  bottom: 34px;
-  color: white;
-}
 
+  left: clamp(1.5rem, 4vw, 3rem);
+  right: clamp(1.5rem, 4vw, 3rem);
+  bottom: clamp(1.75rem, 4vw, 3rem);
+
+  color: #ffffff;
+}
 
 .about-v2-photo-caption span {
-  display: inline-block;
-  margin-bottom: 13px;
-  color: var(--color-brand-accent);
-  font-size: 9px;
-  font-weight: 900;
-  letter-spacing: .15em;
-}
+  display: block;
 
+  margin-bottom: 0.9rem;
+
+  color: #ffffff;
+
+  font-size: 0.65rem;
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
 
 .about-v2-photo-caption h3 {
-  max-width: 430px;
+  max-width: 520px;
+
   margin: 0;
-  font-size: clamp(25px, 3vw, 40px);
-  line-height: 1.1;
-  letter-spacing: -.035em;
+
+  color: #ffffff;
+
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 600;
+
+  line-height: 1.02;
+  letter-spacing: -0.04em;
 }
 
 
-/* DETAIL CARDS */
+/* -----------------------------
+   MISSION / APPROACH / COMMITMENT
+   ----------------------------- */
 
 .about-v2-details {
   display: grid;
-  gap: 14px;
-}
 
+  background: #f4f3ef;
+}
 
 .about-v2-detail-card {
   min-height: 185px;
-  padding: 30px;
+
+  padding:
+    clamp(1.6rem, 4vw, 2.7rem);
+
   display: grid;
-  grid-template-columns: 52px 1fr;
-  gap: 22px;
+  grid-template-columns: 48px 1fr;
+
+  gap: 1.25rem;
+
   align-items: start;
 
-  border-radius: 22px;
-  border: 1px solid #e0eae6;
-  background: #f8fbf9;
+  border: 0;
+  border-bottom:
+    1px solid rgba(46, 69, 104, 0.12);
+
+  border-radius: 0;
+
+  background: transparent;
 }
 
+.about-v2-detail-card:last-child {
+  border-bottom: 0;
+}
 
 .about-v2-featured {
   background: var(--color-brand-primary);
-  border-color: var(--color-brand-primary);
 }
 
-
 .about-v2-card-number {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
 
   display: grid;
   place-items: center;
 
   border-radius: 50%;
 
-  background: #ffffff;
+  border:
+    1px solid rgba(46, 69, 104, 0.24);
+
+  background: transparent;
 
   color: var(--color-brand-primary);
 
-  font-size: 10px;
-  font-weight: 900;
+  font-size: 0.63rem;
+  font-weight: 800;
 }
 
+.about-v2-featured .about-v2-card-number {
+  border-color: rgba(255, 255, 255, 0.45);
+
+  color: #ffffff;
+}
 
 .about-v2-detail-card:not(.about-v2-featured)
 .about-v2-card-number {
-  background: #e5f3ee;
+  background: transparent;
 }
-
 
 .about-v2-detail-card small {
   display: block;
-  margin: 2px 0 10px;
 
-  color: #87958f;
+  margin: 0.15rem 0 0.8rem;
 
-  font-size: 8px;
-  font-weight: 900;
+  color: #7d8792;
 
-  letter-spacing: .12em;
+  font-size: 0.58rem;
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
 }
-
 
 .about-v2-featured small {
-  color: rgba(255,255,255,.6);
+  color: rgba(255, 255, 255, 0.64);
 }
-
 
 .about-v2-detail-card h3 {
+  max-width: 560px;
+
   margin: 0;
 
-  color: #173129;
+  color: var(--color-brand-primary-dark);
 
-  font-size: 18px;
-  line-height: 1.45;
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  font-weight: 600;
 
-  letter-spacing: -.015em;
+  line-height: 1.48;
+  letter-spacing: -0.018em;
 }
-
 
 .about-v2-featured h3 {
   color: #ffffff;
 }
 
 
-/* =====================================
+/* -----------------------------
    ORGANIZATION FACTS
-===================================== */
+   ----------------------------- */
 
 .about-v2-facts {
-  margin-top: 24px;
-
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
 
-  grid-template-columns:
-    repeat(4, 1fr);
+  margin-top:
+    clamp(2.5rem, 5vw, 4.5rem);
 
   border-top:
-    1px solid #dde8e3;
+    1px solid rgba(46, 69, 104, 0.15);
 
   border-bottom:
-    1px solid #dde8e3;
+    1px solid rgba(46, 69, 104, 0.15);
 }
-
 
 .about-v2-fact {
-  padding: 27px 25px 27px 0;
+  min-height: 118px;
+
+  padding:
+    1.45rem
+    1rem
+    1.45rem
+    0;
 }
 
-
-.about-v2-fact:not(:last-child) {
+.about-v2-fact:nth-child(odd) {
   border-right:
-    1px solid #dde8e3;
-
-  margin-right:
-    25px;
+    1px solid rgba(46, 69, 104, 0.12);
 }
 
+.about-v2-fact:nth-child(even) {
+  padding-left: 1rem;
+}
 
 .about-v2-fact span {
   display: block;
 
-  margin-bottom: 7px;
+  margin-bottom: 0.55rem;
 
-  color: #85938d;
+  color: #7d8791;
 
-  font-size: 9px;
-  font-weight: 850;
+  font-size: 0.58rem;
+  font-weight: 800;
 
+  letter-spacing: 0.11em;
   text-transform: uppercase;
-
-  letter-spacing: .1em;
 }
-
 
 .about-v2-fact strong {
-  color: #183229;
+  color: var(--color-brand-primary-dark);
 
-  font-size: 16px;
-
-  letter-spacing: -.015em;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-weight: 650;
 }
 
 
-/* =====================================
+/* -----------------------------
    VALUES
-===================================== */
+   ----------------------------- */
 
 .about-v2-values {
-  margin-top: 100px;
+  margin-top:
+    clamp(5rem, 9vw, 8rem);
 }
-
 
 .about-v2-values-heading {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  display: grid;
 
-  gap: 30px;
+  gap: 0.9rem;
 
-  margin-bottom: 38px;
+  max-width: 760px;
+
+  margin-bottom:
+    clamp(2.5rem, 5vw, 4rem);
 }
-
 
 .about-v2-values-heading span {
-  color: var(--color-brand-primary);
+  color: var(--color-brand-accent);
 
-  font-size: 10px;
-  font-weight: 900;
+  font-size: 0.65rem;
+  font-weight: 800;
 
-  letter-spacing: .12em;
-
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
-
 
 .about-v2-values-heading h3 {
   margin: 0;
 
-  color: #10251e;
+  color: var(--color-brand-primary-dark);
 
-  font-size: clamp(28px, 3.5vw, 44px);
+  font-size: clamp(2.3rem, 4vw, 4.5rem);
+  font-weight: 600;
 
-  letter-spacing: -.04em;
+  line-height: 1;
+  letter-spacing: -0.045em;
 }
-
 
 .about-v2-values-grid {
   display: grid;
+  grid-template-columns: 1fr;
 
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  gap: 14px;
+  border-top:
+    1px solid rgba(46, 69, 104, 0.15);
 }
-
 
 .about-v2-values-grid article {
-  min-height: 255px;
+  min-height: 230px;
 
-  padding: 28px;
+  padding:
+    2rem
+    1rem
+    2rem
+    0;
 
-  border: 1px solid #e0eae6;
+  border: 0;
+  border-bottom:
+    1px solid rgba(46, 69, 104, 0.15);
 
-  border-radius: 20px;
+  border-radius: 0;
 
-  background: #fbfdfc;
+  background: transparent;
 
   transition:
-    transform .25s ease,
-    box-shadow .25s ease;
+    transform 180ms ease;
 }
-
 
 .about-v2-values-grid article:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 
-  box-shadow:
-    0 20px 45px rgba(20, 70, 52, .08);
+  box-shadow: none;
 }
-
 
 .about-v2-values-grid article > span {
   display: block;
 
-  margin-bottom: 65px;
+  margin-bottom: 3.5rem;
 
-  color: var(--color-brand-primary);
+  color: var(--color-brand-accent);
 
-  font-size: 10px;
+  font-size: 0.64rem;
+  font-weight: 800;
 
-  font-weight: 900;
+  letter-spacing: 0.08em;
 }
-
 
 .about-v2-values-grid h4 {
-  margin: 0 0 11px;
+  margin: 0 0 0.75rem;
 
-  color: #173129;
+  color: var(--color-brand-primary-dark);
 
-  font-size: 17px;
+  font-size: 1.15rem;
+  font-weight: 650;
 }
-
 
 .about-v2-values-grid p {
+  max-width: 290px;
+
   margin: 0;
 
-  color: #72817b;
+  color: #697480;
 
-  font-size: 12px;
+  font-size: 0.82rem;
 
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 
-/* =====================================
-   TABLET
-===================================== */
+/* =====================================================
+   TABLET / DESKTOP
+   ===================================================== */
 
-@media (max-width: 1000px) {
-
-  .about-v2-intro {
-    grid-template-columns: 120px 1fr;
-  }
-
-  .about-v2-intro-copy {
-    grid-column: 2;
-  }
-
-  .about-v2-main {
-    grid-template-columns: 1fr;
-  }
-
-  .about-v2-details {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .about-v2-detail-card {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
-  .about-v2-values-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-
-
-/* =====================================
-   MOBILE
-===================================== */
-
-@media (max-width: 650px) {
-
-  .yiteism-about-v2 {
-    padding: 80px 0;
-  }
-
-  .about-v2-intro {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    padding-bottom: 50px;
-  }
-
-  .about-v2-intro-copy {
-    grid-column: auto;
-  }
-
-  .about-v2-photo {
-    min-height: 480px;
-    border-radius: 22px;
-  }
-
-  .about-v2-details {
-    grid-template-columns: 1fr;
-  }
+@media (min-width: 48rem) {
 
   .about-v2-facts {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .about-v2-fact,
+  .about-v2-fact:nth-child(even) {
+    padding:
+      1.65rem
+      1.25rem
+      1.65rem
+      0;
+  }
+
   .about-v2-fact:not(:last-child) {
-    margin: 0;
-    padding: 22px 15px 22px 0;
-  }
-
-  .about-v2-fact:nth-child(odd) {
-    border-right: 1px solid #dde8e3;
-  }
-
-  .about-v2-values {
-    margin-top: 70px;
-  }
-
-  .about-v2-values-heading {
-    display: block;
-  }
-
-  .about-v2-values-heading span {
-    display: block;
-    margin-bottom: 10px;
+    border-right:
+      1px solid rgba(46, 69, 104, 0.12);
   }
 
   .about-v2-values-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .about-v2-values-grid article:nth-child(odd) {
+    border-right:
+      1px solid rgba(46, 69, 104, 0.15);
+  }
+
+  .about-v2-values-grid article:nth-child(even) {
+    padding-left: 2rem;
+  }
+
+}
+
+
+@media (min-width: 64rem) {
+
+  .about-v2-intro {
+    grid-template-columns:
+      150px
+      minmax(0, 1.35fr)
+      minmax(300px, 0.65fr);
+
+    gap:
+      clamp(2.5rem, 4vw, 5rem);
+
+    align-items: start;
+  }
+
+  .about-v2-main {
+    grid-template-columns:
+      minmax(0, 1.12fr)
+      minmax(380px, 0.88fr);
+  }
+
+  .about-v2-photo {
+    min-height: 690px;
+  }
+
+  .about-v2-details {
+    min-height: 690px;
+
+    grid-template-rows:
+      repeat(3, 1fr);
+  }
+
+  .about-v2-detail-card {
+    min-height: 0;
+  }
+
+  .about-v2-values-grid {
+    grid-template-columns:
+      repeat(4, 1fr);
+  }
+
+  .about-v2-values-grid article {
+    min-height: 270px;
+
+    padding:
+      2.25rem
+      1.8rem
+      2.25rem
+      0;
+
+    border-right:
+      1px solid rgba(46, 69, 104, 0.15);
+  }
+
+  .about-v2-values-grid article:last-child {
+    border-right: 0;
+  }
+
+  .about-v2-values-grid article:nth-child(even) {
+    padding-left: 1.8rem;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 40rem) {
+
+  .about-v2-photo {
+    min-height: 470px;
+  }
+
+  .about-v2-detail-card {
+    grid-template-columns: 40px 1fr;
+
+    padding:
+      1.5rem
+      1.25rem;
   }
 
   .about-v2-values-grid article {
@@ -1936,7 +2030,7 @@
   }
 
   .about-v2-values-grid article > span {
-    margin-bottom: 38px;
+    margin-bottom: 2rem;
   }
 
 }
