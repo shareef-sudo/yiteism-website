@@ -2040,335 +2040,411 @@
 
 /* YITEISM PROGRAMMES V2 START */
 
+/* =====================================================
+   YITEISM PROGRAMMES
+   Editorial institutional programme showcase
+   ===================================================== */
+
 .yiteism-programmes-v2 {
-  padding: 120px 0;
-  background: #f4f8f6;
+  padding: clamp(5rem, 9vw, 8rem) 0;
+
+  background: #f4f3ef;
 }
 
 
-/* ===================================
-   HEADER
-=================================== */
+/* -----------------------------
+   SECTION HEADER
+   ----------------------------- */
 
 .programmes-v2-head {
   display: grid;
-  grid-template-columns: 160px minmax(0, 1.2fr) minmax(280px, .8fr);
-  gap: 45px;
-  align-items: start;
-  margin-bottom: 65px;
-}
+  grid-template-columns: 1fr;
 
+  gap: 2rem;
+
+  margin-bottom:
+    clamp(3.5rem, 7vw, 6rem);
+}
 
 .programmes-v2-label {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  align-items: center;
 
-  color: #6f8078;
+  gap: 0.8rem;
 
-  font-size: 10px;
-  font-weight: 900;
+  color: var(--color-brand-primary);
 
+  font-size: 0.67rem;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: .11em;
 }
-
 
 .programmes-v2-label span {
-  color: var(--color-brand-primary);
+  color: var(--color-brand-accent);
 }
-
 
 .programmes-v2-title h2 {
+  max-width: 850px;
+
   margin: 0;
 
-  max-width: 760px;
+  color: var(--color-brand-primary-dark);
 
-  color: #10251e;
+  font-size: clamp(2.8rem, 5vw, 5.3rem);
+  font-weight: 650;
 
-  font-size: clamp(38px, 4.8vw, 66px);
-
-  line-height: 1.03;
-
-  letter-spacing: -.055em;
+  line-height: 0.98;
+  letter-spacing: -0.052em;
 }
-
 
 .programmes-v2-title h2 em {
   display: block;
 
-  color: var(--color-brand-primary);
+  color: var(--color-brand-accent);
 
   font-style: normal;
 }
 
+.programmes-v2-copy {
+  max-width: 540px;
+}
 
 .programmes-v2-copy p {
   margin: 0;
 
-  color: #697972;
+  color: #626d79;
 
-  font-size: 14px;
-
-  line-height: 1.75;
+  font-size: 0.96rem;
+  line-height: 1.8;
 }
 
 
-/* ===================================
-   GRID
-=================================== */
+/* -----------------------------
+   PROGRAMME GRID
+   ----------------------------- */
 
 .programmes-v2-grid {
   display: grid;
+  grid-template-columns: 1fr;
 
-  grid-template-columns:
-    repeat(3, 1fr);
+  gap: 1px;
 
-  gap: 16px;
+  background:
+    rgba(46, 69, 104, 0.14);
+
+  border-top:
+    1px solid rgba(46, 69, 104, 0.14);
+
+  border-bottom:
+    1px solid rgba(46, 69, 104, 0.14);
 }
 
 
-/* ===================================
-   CARD
-=================================== */
+/* -----------------------------
+   PROGRAMME CARD
+   ----------------------------- */
 
 .programme-v2-card {
-  min-height: 430px;
+  position: relative;
 
-  padding: 28px;
+  min-height: 360px;
+
+  padding:
+    clamp(1.75rem, 4vw, 2.7rem);
 
   display: flex;
-
   flex-direction: column;
-
-  position: relative;
 
   overflow: hidden;
 
-  border-radius: 24px;
-
-  border: 1px solid #dfe9e4;
+  border: 0;
+  border-radius: 0;
 
   background: #ffffff;
 
-  transition:
-    transform .25s ease,
-    box-shadow .25s ease,
-    border-color .25s ease;
-}
+  color: var(--color-brand-primary-dark);
 
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease;
+}
 
 .programme-v2-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-2px);
 
-  border-color: #bcd5cb;
+  border-color: transparent;
 
-  box-shadow:
-    0 25px 55px rgba(15, 69, 50, .09);
+  box-shadow: none;
 }
 
 
-/* Featured */
+/* Featured programme */
 
 .programme-v2-featured {
+  min-height: 500px;
+
   background: var(--color-brand-primary);
 
-  border-color: var(--color-brand-primary);
-
   color: #ffffff;
 }
 
 
-/* Dark */
+/* Final dark programme */
 
 .programme-v2-dark {
-  background: #10251e;
-
-  border-color: #10251e;
+  background: var(--color-brand-primary-dark);
 
   color: #ffffff;
 }
 
 
-/* top */
+/* -----------------------------
+   CARD META
+   ----------------------------- */
 
 .programme-v2-top {
   display: flex;
-
+  align-items: center;
   justify-content: space-between;
 
-  align-items: center;
-
-  gap: 20px;
+  gap: 1.25rem;
 }
-
 
 .programme-v2-number {
-  color: var(--color-brand-primary);
+  color: var(--color-brand-accent);
 
-  font-size: 10px;
+  font-size: 0.64rem;
+  font-weight: 800;
 
-  font-weight: 900;
+  letter-spacing: 0.08em;
 }
-
 
 .programme-v2-tag {
-  padding: 7px 10px;
+  padding: 0;
 
-  border-radius: 100px;
+  border-radius: 0;
 
-  background: #edf5f2;
+  background: transparent;
 
-  color: #567069;
+  color: #7c8793;
 
-  font-size: 8px;
+  font-size: 0.58rem;
+  font-weight: 800;
 
-  font-weight: 900;
-
+  letter-spacing: 0.11em;
   text-transform: uppercase;
-
-  letter-spacing: .07em;
 }
-
-
-.programme-v2-featured .programme-v2-number,
-.programme-v2-dark .programme-v2-number {
-  color: var(--color-brand-accent);
-}
-
 
 .programme-v2-featured .programme-v2-tag,
 .programme-v2-dark .programme-v2-tag {
-  background: rgba(255,255,255,.1);
+  background: transparent;
 
-  color: rgba(255,255,255,.72);
+  color: rgba(255,255,255,0.62);
 }
 
 
-/* icon */
+/* Remove prototype icon blocks */
 
 .programme-v2-icon {
-  width: 58px;
-  height: 58px;
-
-  margin-top: 45px;
-
-  display: grid;
-
-  place-items: center;
-
-  border-radius: 17px;
-
-  background: #e7f3ef;
-
-  color: var(--color-brand-primary);
-
-  font-size: 25px;
-
-  font-weight: 900;
+  display: none;
 }
 
 
-.programme-v2-featured .programme-v2-icon {
-  background: rgba(255,255,255,.12);
-
-  color: #ffffff;
-}
-
-
-.programme-v2-dark .programme-v2-icon {
-  background: rgba(255,255,255,.08);
-
-  color: var(--color-brand-accent);
-}
-
-
-/* body */
+/* -----------------------------
+   BODY
+   ----------------------------- */
 
 .programme-v2-body {
   margin-top: auto;
 
-  padding-top: 45px;
+  padding-top:
+    clamp(4rem, 9vw, 7rem);
 }
-
 
 .programme-v2-body h3 {
-  margin: 0 0 12px;
+  max-width: 520px;
 
-  color: #173129;
+  margin: 0 0 1rem;
 
-  font-size: 24px;
+  color: var(--color-brand-primary-dark);
 
-  line-height: 1.1;
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  font-weight: 600;
 
-  letter-spacing: -.035em;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
 }
-
 
 .programme-v2-body p {
+  max-width: 430px;
+
   margin: 0;
 
-  max-width: 340px;
+  color: #697480;
 
-  color: #74837d;
-
-  font-size: 12px;
-
-  line-height: 1.7;
+  font-size: 0.82rem;
+  line-height: 1.75;
 }
 
+.programme-v2-featured .programme-v2-body h3 {
+  max-width: 680px;
 
-.programme-v2-featured .programme-v2-body h3,
+  color: #ffffff;
+
+  font-size: clamp(2.8rem, 5vw, 5rem);
+}
+
+.programme-v2-featured .programme-v2-body p,
+.programme-v2-dark .programme-v2-body p {
+  color: rgba(255,255,255,0.68);
+}
+
 .programme-v2-dark .programme-v2-body h3 {
   color: #ffffff;
 }
 
 
-.programme-v2-featured .programme-v2-body p,
-.programme-v2-dark .programme-v2-body p {
-  color: rgba(255,255,255,.62);
+
+/* -----------------------------
+   FEATURED PROGRAMME MEDIA
+   ----------------------------- */
+
+.programme-v2-media {
+  margin: 2rem 0 0;
+
+  overflow: hidden;
+
+  min-height: 280px;
+
+  background: var(--color-brand-primary-dark);
+}
+
+.programme-v2-media img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.programme-v2-featured .programme-v2-media {
+  margin-inline:
+    calc(clamp(1.75rem, 4vw, 2.7rem) * -1);
+
+  margin-bottom:
+    calc(clamp(1.75rem, 4vw, 2.7rem) * -1);
 }
 
 
-/* link */
+/* Desktop featured split */
+
+@media (min-width: 64rem) {
+
+  .programme-v2-featured {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 0.9fr)
+      minmax(320px, 1.1fr);
+
+    grid-template-rows:
+      auto 1fr auto;
+
+    column-gap: 0;
+
+    padding: 0;
+  }
+
+  .programme-v2-featured .programme-v2-top {
+    grid-column: 1;
+    grid-row: 1;
+
+    padding:
+      2.7rem
+      2.7rem
+      0;
+  }
+
+  .programme-v2-featured .programme-v2-body {
+    grid-column: 1;
+    grid-row: 2;
+
+    padding:
+      5rem
+      2.7rem
+      2rem;
+  }
+
+  .programme-v2-featured .programme-v2-link {
+    grid-column: 1;
+    grid-row: 3;
+
+    margin:
+      0
+      2.7rem
+      2.7rem;
+
+    padding-top: 1.15rem;
+  }
+
+  .programme-v2-featured .programme-v2-media {
+    grid-column: 2;
+    grid-row: 1 / -1;
+
+    margin: 0;
+
+    min-height: 560px;
+  }
+
+  .programme-v2-featured .programme-v2-media img {
+    object-position: center center;
+  }
+
+}
+
+/* -----------------------------
+   LINK
+   ----------------------------- */
 
 .programme-v2-link {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
-  margin-top: 25px;
+  margin-top: 2rem;
+  padding-top: 1.15rem;
 
-  padding-top: 18px;
-
-  border-top: 1px solid #e0e9e5;
+  border-top:
+    1px solid rgba(46, 69, 104, 0.15);
 
   color: var(--color-brand-primary);
 
   text-decoration: none;
 
-  font-size: 11px;
+  font-size: 0.67rem;
+  font-weight: 800;
 
-  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
-
 
 .programme-v2-featured .programme-v2-link,
 .programme-v2-dark .programme-v2-link {
-  border-color: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,0.18);
 
   color: #ffffff;
 }
 
-
 .programme-v2-link span {
-  font-size: 17px;
+  font-size: 1rem;
 
-  transition: transform .2s ease;
+  transition:
+    transform 180ms ease;
 }
-
 
 .programme-v2-card:hover
 .programme-v2-link span {
@@ -2376,65 +2452,65 @@
 }
 
 
-/* ===================================
+/* -----------------------------
    BOTTOM CTA
-=================================== */
+   ----------------------------- */
 
 .programmes-v2-bottom {
-  margin-top: 26px;
+  margin-top:
+    clamp(3rem, 6vw, 5rem);
 
-  padding: 38px 0;
+  padding:
+    clamp(2rem, 4vw, 3rem)
+    0;
 
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-  justify-content: space-between;
+  gap: 1.5rem;
 
-  align-items: center;
+  border-top:
+    1px solid rgba(46, 69, 104, 0.16);
 
-  gap: 30px;
-
-  border-top: 1px solid #d9e5df;
-
-  border-bottom: 1px solid #d9e5df;
+  border-bottom:
+    1px solid rgba(46, 69, 104, 0.16);
 }
-
 
 .programmes-v2-bottom span {
-  color: var(--color-brand-primary);
+  color: var(--color-brand-accent);
 
-  font-size: 9px;
+  font-size: 0.62rem;
+  font-weight: 800;
 
-  font-weight: 900;
-
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-
-  letter-spacing: .12em;
 }
-
 
 .programmes-v2-bottom h3 {
-  margin: 7px 0 0;
+  margin: 0.5rem 0 0;
 
-  color: #173129;
+  color: var(--color-brand-primary-dark);
 
-  font-size: 26px;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 600;
 
-  letter-spacing: -.035em;
+  letter-spacing: -0.035em;
 }
 
-
 .programmes-v2-cta {
-  min-height: 50px;
+  min-height: 52px;
 
-  padding: 0 20px;
+  padding: 0 1.35rem;
 
   display: inline-flex;
-
   align-items: center;
 
-  gap: 15px;
+  gap: 0.85rem;
 
-  border-radius: 100px;
+  border-radius: 0;
+
+  border: 1px solid var(--color-brand-primary);
 
   background: var(--color-brand-primary);
 
@@ -2442,77 +2518,146 @@
 
   text-decoration: none;
 
-  font-size: 12px;
+  font-size: 0.68rem;
+  font-weight: 800;
 
-  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 
   white-space: nowrap;
 }
 
-
 .programmes-v2-cta span {
   color: #ffffff;
 
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 
-/* ===================================
+/* =====================================================
    TABLET
-=================================== */
+   ===================================================== */
 
-@media (max-width: 1000px) {
-
-  .programmes-v2-head {
-    grid-template-columns: 120px 1fr;
-  }
-
-  .programmes-v2-copy {
-    grid-column: 2;
-  }
+@media (min-width: 48rem) {
 
   .programmes-v2-grid {
     grid-template-columns:
       repeat(2, 1fr);
   }
 
+  .programme-v2-featured {
+    grid-column: 1 / -1;
+
+    min-height: 540px;
+  }
+
+  .programme-v2-dark {
+    grid-column: 1 / -1;
+  }
+
+  .programmes-v2-bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
 }
 
 
-/* ===================================
-   MOBILE
-=================================== */
+/* =====================================================
+   DESKTOP
+   ===================================================== */
 
-@media (max-width: 650px) {
-
-  .yiteism-programmes-v2 {
-    padding: 80px 0;
-  }
+@media (min-width: 64rem) {
 
   .programmes-v2-head {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      150px
+      minmax(0, 1.35fr)
+      minmax(300px, 0.65fr);
 
-    gap: 24px;
+    gap:
+      clamp(2.5rem, 4vw, 5rem);
 
-    margin-bottom: 45px;
-  }
-
-  .programmes-v2-copy {
-    grid-column: auto;
+    align-items: start;
   }
 
   .programmes-v2-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      repeat(12, 1fr);
   }
 
   .programme-v2-card {
     min-height: 390px;
   }
 
-  .programmes-v2-bottom {
-    flex-direction: column;
+  .programme-v2-featured {
+    grid-column: span 8;
 
-    align-items: flex-start;
+    min-height: 560px;
+  }
+
+  .programme-v2-card:nth-child(2) {
+    grid-column: span 4;
+
+    min-height: 560px;
+  }
+
+  .programme-v2-card:nth-child(3),
+  .programme-v2-card:nth-child(4),
+  .programme-v2-card:nth-child(5) {
+    grid-column: span 4;
+  }
+
+  .programme-v2-dark {
+    grid-column: 1 / -1;
+
+    min-height: 360px;
+  }
+
+  .programme-v2-dark .programme-v2-body {
+    padding-top: 5rem;
+  }
+
+  .programme-v2-dark .programme-v2-body h3 {
+    max-width: 720px;
+
+    font-size: clamp(2.5rem, 4vw, 4.3rem);
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 40rem) {
+
+  .programme-v2-card,
+  .programme-v2-featured,
+  .programme-v2-dark {
+    min-height: auto;
+  }
+
+  .programme-v2-card:not(.programme-v2-featured)
+  .programme-v2-body {
+    margin-top: 0;
+    padding-top: 3rem;
+  }
+
+  .programme-v2-card:not(.programme-v2-featured) {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+
+  .programme-v2-featured .programme-v2-body h3 {
+    font-size: clamp(2.4rem, 12vw, 3.6rem);
+  }
+
+  .programme-v2-dark .programme-v2-body {
+    margin-top: 0;
+    padding-top: 4rem;
   }
 
   .programmes-v2-cta {
@@ -4473,6 +4618,14 @@
         <div class="programme-v2-icon">
           +
         </div>
+
+        <figure class="programme-v2-media">
+          <img
+            src="assets/media/programme-empower-her.jpg"
+            alt="Young participants taking part in YITEISM Empower Her activities"
+            loading="lazy"
+          >
+        </figure>
 
         <div class="programme-v2-body">
           <h3>Empower Her</h3>
