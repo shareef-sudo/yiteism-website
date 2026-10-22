@@ -1,0 +1,10 @@
+/* YITEISM Brand Tokens */
+:root {
+  --color-brand-primary: #2e4568;
+  --color-brand-primary-dark: #1b2f4b;
+  --color-brand-primary-light: #e9eef5;
+
+  --color-brand-accent: #e56655;
+  --color-brand-accent-dark: #c94b42;
+  --color-brand-accent-light: #fff0ed;
+}
