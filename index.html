@@ -5011,6 +5011,50 @@
 /* YITEISM BOTTOM EXPERIENCE V2 END */
 
 
+
+
+
+/* YITEISM NAV FUNCTIONALITY V1 */
+
+html.yiteism-menu-open,
+html.yiteism-menu-open body {
+  overflow: hidden;
+}
+
+.yiteism-header__language {
+  cursor: default;
+  user-select: none;
+}
+
+.yiteism-mobile-nav summary:focus-visible,
+.yiteism-mobile-nav__panel a:focus-visible,
+.yiteism-header__nav a:focus-visible,
+.yiteism-header__brand:focus-visible {
+  outline: 3px solid var(--color-brand-accent);
+  outline-offset: 4px;
+}
+
+.yiteism-mobile-nav__panel {
+  max-height: calc(100vh - 74px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* YITEISM NAV FUNCTIONALITY V1 END */
+
+
 </style>
 
   <!-- =====================================================
@@ -5097,30 +5141,21 @@
       <a href="#programmes">What We Do</a>
       <a href="#projects">Where We Work</a>
       <a href="#impact">Our Impact</a>
-      <a href="#resources">Resources</a>
+      <a href="#partners">Partners</a>
       <a href="#contact">Get Involved</a>
     </nav>
 
     <div class="yiteism-header__utilities">
 
-      <a
-        class="yiteism-header__icon"
-        href="#search"
-        aria-label="Search"
-      >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="11" cy="11" r="6.5"></circle>
-          <path d="m16 16 4 4"></path>
-        </svg>
-      </a>
+      
 
-      <button
+      <span
         class="yiteism-header__language"
-        type="button"
-        aria-label="Change language"
+        aria-label="Website language: English"
+        title="English"
       >
-        <span>EN</span>
-      </button>
+        EN
+      </span>
 
       <details class="yiteism-mobile-nav">
 
@@ -5130,12 +5165,15 @@
           <span></span>
         </summary>
 
-        <nav class="yiteism-mobile-nav__panel">
+        <nav
+          class="yiteism-mobile-nav__panel"
+          aria-label="Mobile navigation"
+        >
           <a href="#about">Who We Are</a>
           <a href="#programmes">What We Do</a>
           <a href="#projects">Where We Work</a>
           <a href="#impact">Our Impact</a>
-          <a href="#resources">Resources</a>
+          <a href="#partners">Partners</a>
           <a href="#contact">Get Involved</a>
         </nav>
 
@@ -6364,6 +6402,112 @@
 
   </div>
 </footer>
+
+
+
+
+<script>
+/* YITEISM NAV FUNCTIONALITY V1 */
+(() => {
+  const menu =
+    document.querySelector('.yiteism-mobile-nav');
+
+  if (!menu) return;
+
+  const summary =
+    menu.querySelector('summary');
+
+  const links =
+    menu.querySelectorAll(
+      '.yiteism-mobile-nav__panel a[href^="#"]'
+    );
+
+  const syncMenuState = () => {
+    const isOpen = menu.open;
+
+    summary.setAttribute(
+      'aria-label',
+      isOpen
+        ? 'Close navigation menu'
+        : 'Open navigation menu'
+    );
+
+    summary.setAttribute(
+      'aria-expanded',
+      String(isOpen)
+    );
+
+    document.documentElement.classList.toggle(
+      'yiteism-menu-open',
+      isOpen
+    );
+  };
+
+  menu.addEventListener(
+    'toggle',
+    syncMenuState
+  );
+
+  links.forEach((link) => {
+    link.addEventListener('click', () => {
+      menu.open = false;
+    });
+  });
+
+  document.addEventListener(
+    'keydown',
+    (event) => {
+      if (
+        event.key === 'Escape' &&
+        menu.open
+      ) {
+        menu.open = false;
+        summary.focus();
+      }
+    }
+  );
+
+  document.addEventListener(
+    'click',
+    (event) => {
+      if (
+        menu.open &&
+        !menu.contains(event.target)
+      ) {
+        menu.open = false;
+      }
+    }
+  );
+
+  const desktopQuery =
+    window.matchMedia(
+      '(min-width: 58rem)'
+    );
+
+  const closeOnDesktop = (event) => {
+    if (
+      event.matches &&
+      menu.open
+    ) {
+      menu.open = false;
+    }
+  };
+
+  if (desktopQuery.addEventListener) {
+    desktopQuery.addEventListener(
+      'change',
+      closeOnDesktop
+    );
+  } else {
+    desktopQuery.addListener(
+      closeOnDesktop
+    );
+  }
+
+  syncMenuState();
+})();
+</script>
+
 
 </body>
 </html>
