@@ -981,331 +981,424 @@
   
 /* YITEISM HERO V2 START */
 
+/* =====================================================
+   YITEISM HERO
+   Institutional split-screen layout
+   ===================================================== */
+
 .yiteism-hero-v2 {
   position: relative;
   overflow: hidden;
-  padding: 90px 0 0;
-  background: linear-gradient(180deg, #fbfdfc 0%, #f3f9f6 100%);
+  background: #f6f5f1;
 }
 
 .hero-v2-glow {
-  position: absolute;
-  border-radius: 999px;
-  pointer-events: none;
-}
-
-.hero-v2-glow-one {
-  width: 520px;
-  height: 520px;
-  right: -190px;
-  top: -210px;
-  background: rgba(46, 69, 104, 0.09);
-}
-
-.hero-v2-glow-two {
-  width: 360px;
-  height: 360px;
-  left: -180px;
-  bottom: -120px;
-  background: rgba(242, 177, 52, 0.11);
+  display: none;
 }
 
 .hero-v2-grid {
-  position: relative;
-  z-index: 2;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(390px, 0.95fr);
-  align-items: center;
-  gap: 72px;
+  grid-template-columns: 1fr;
+}
+
+
+/* -----------------------------
+   LEFT CONTENT
+   ----------------------------- */
+
+.hero-v2-content {
+  padding:
+    clamp(4.5rem, 10vw, 7rem)
+    max(1.25rem, calc((100vw - 1320px) / 2))
+    clamp(4rem, 8vw, 6rem);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-v2-label {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 9px 14px;
-  border: 1px solid #d7e6e0;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.8);
-  color: #4c625a;
-  font-size: 11px;
+  gap: 0.75rem;
+
+  width: fit-content;
+
+  margin-bottom: 1.75rem;
+
+  color: var(--color-brand-primary);
+
+  font-size: 0.68rem;
   font-weight: 800;
-  letter-spacing: 0.07em;
+
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .hero-v2-label span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  width: 28px;
+  height: 2px;
+
+  border-radius: 0;
+
   background: var(--color-brand-accent);
-  box-shadow: 0 0 0 5px rgba(242, 177, 52, 0.15);
+
+  box-shadow: none;
 }
 
 .hero-v2-content h1 {
-  max-width: 780px;
-  margin: 25px 0;
-  color: #10251e;
-  font-size: clamp(52px, 6.2vw, 88px);
-  line-height: 0.97;
-  letter-spacing: -0.065em;
-  font-weight: 800;
+  max-width: 760px;
+
+  margin: 0;
+
+  color: var(--color-brand-primary-dark);
+
+  font-size: clamp(3.2rem, 5.4vw, 5.4rem);
+  font-weight: 700;
+
+  line-height: 0.94;
+  letter-spacing: -0.055em;
 }
 
 .hero-v2-content h1 em {
   display: block;
-  color: var(--color-brand-primary);
+
+  margin-top: 0.08em;
+
+  color: var(--color-brand-accent);
+
   font-style: normal;
+  font-weight: 700;
 }
 
 .hero-v2-description {
-  max-width: 625px;
-  color: #63736d;
-  font-size: 17px;
-  line-height: 1.75;
+  max-width: 600px;
+
+  margin:
+    clamp(1.75rem, 4vw, 2.5rem)
+    0
+    0;
+
+  color: #56616f;
+
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  line-height: 1.8;
 }
+
+
+/* -----------------------------
+   ACTIONS
+   ----------------------------- */
 
 .hero-v2-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 32px;
+
+  gap: 0.75rem;
+
+  margin-top: 2rem;
 }
 
 .hero-v2-primary,
 .hero-v2-secondary {
-  min-height: 54px;
-  padding: 0 23px;
-  border-radius: 999px;
+  min-height: 52px;
+
+  padding: 0 1.35rem;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  text-decoration: none;
-  font-size: 13px;
+
+  gap: 0.8rem;
+
+  border-radius: 0;
+
+  font-size: 0.72rem;
   font-weight: 800;
-  transition: 0.25s ease;
+
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
 }
 
 .hero-v2-primary {
+  border: 1px solid var(--color-brand-primary);
+
   background: var(--color-brand-primary);
   color: #ffffff;
-  box-shadow: 0 15px 35px rgba(46, 69, 104, 0.2);
+
+  box-shadow: none;
 }
 
 .hero-v2-primary:hover {
-  background: #07503f;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
+
+  background: var(--color-brand-primary-dark);
 }
 
 .hero-v2-secondary {
-  background: #ffffff;
-  color: #183229;
-  border: 1px solid #d9e5e0;
+  border: 1px solid rgba(46, 69, 104, 0.22);
+
+  background: transparent;
+  color: var(--color-brand-primary);
 }
 
 .hero-v2-secondary:hover {
+  transform: translateY(-2px);
+
   border-color: var(--color-brand-primary);
-  transform: translateY(-3px);
 }
 
+
+/* -----------------------------
+   HERO STATS
+   ----------------------------- */
+
 .hero-v2-stats {
-  display: flex;
-  margin-top: 45px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  max-width: 540px;
+
+  margin-top: clamp(2.75rem, 6vw, 4rem);
+
+  border-top: 1px solid rgba(46, 69, 104, 0.15);
 }
 
 .hero-v2-stats div {
-  padding-right: 27px;
-  margin-right: 27px;
-  border-right: 1px solid #dbe6e1;
-}
+  margin: 0;
 
-.hero-v2-stats div:last-child {
-  padding-right: 0;
-  margin-right: 0;
+  padding:
+    1.35rem
+    1rem
+    0
+    0;
+
   border-right: 0;
 }
 
 .hero-v2-stats strong {
   display: block;
-  color: #133128;
-  font-size: 22px;
+
+  color: var(--color-brand-primary-dark);
+
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
   line-height: 1;
 }
 
 .hero-v2-stats span {
   display: block;
-  margin-top: 7px;
-  color: #7a8983;
-  font-size: 10px;
+
+  margin-top: 0.45rem;
+
+  color: #7a8490;
+
+  font-size: 0.6rem;
   font-weight: 800;
-  letter-spacing: 0.05em;
+
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
+
+/* -----------------------------
+   RIGHT VISUAL
+   ----------------------------- */
+
 .hero-v2-visual {
   position: relative;
-  padding: 25px 0 45px;
+
+  min-height: 520px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  background: var(--color-brand-primary-dark);
 }
 
 .hero-v2-photo {
-  position: relative;
-  min-height: 555px;
-  overflow: hidden;
-  border-radius: 32px;
+  position: absolute;
+  inset: 0;
+
+  min-height: 100%;
+
+  border-radius: 0;
+
   background:
-    url("https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1400&q=90")
+    url("assets/media/hero-yiteism.jpg")
     center / cover no-repeat;
-  box-shadow: 0 30px 75px rgba(18, 56, 43, 0.16);
+
+  box-shadow: none;
+
+  transform: scale(1.002);
 }
 
 .hero-v2-photo-overlay {
   position: absolute;
   inset: 0;
+
   background:
     linear-gradient(
-      to top,
-      rgba(4, 40, 31, 0.82),
-      rgba(4, 40, 31, 0.06) 60%,
-      transparent
+      180deg,
+      rgba(27, 47, 75, 0.04) 35%,
+      rgba(27, 47, 75, 0.58) 100%
     );
 }
 
 .hero-v2-photo-copy {
   position: absolute;
-  left: 30px;
-  right: 30px;
-  bottom: 30px;
+
+  left: clamp(1.5rem, 4vw, 3rem);
+  right: clamp(1.5rem, 4vw, 3rem);
+  bottom: clamp(1.75rem, 5vw, 3.5rem);
+
   color: #ffffff;
 }
 
 .hero-v2-photo-copy span {
-  display: inline-block;
-  margin-bottom: 10px;
-  color: var(--color-brand-accent);
-  font-size: 9px;
-  font-weight: 900;
-  letter-spacing: 0.13em;
+  display: block;
+
+  margin-bottom: 0.8rem;
+
+  color: #ffffff;
+
+  font-size: 0.65rem;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .hero-v2-photo-copy h3 {
-  max-width: 360px;
+  max-width: 500px;
+
   margin: 0;
-  font-size: 25px;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
+
+  color: #ffffff;
+
+  font-size: clamp(1.7rem, 3vw, 2.65rem);
+  font-weight: 600;
+
+  line-height: 1.08;
+  letter-spacing: -0.035em;
 }
+
+
+/* Remove prototype floating cards */
 
 .hero-v2-card {
-  position: absolute;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  padding: 16px 18px;
-  border-radius: 17px;
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 22px 55px rgba(13, 48, 36, 0.14);
-  backdrop-filter: blur(15px);
+  display: none;
 }
 
-.hero-v2-card-top {
-  top: 65px;
-  left: -50px;
-}
 
-.hero-v2-card-bottom {
-  right: -35px;
-  bottom: 70px;
-  max-width: 255px;
-}
-
-.hero-v2-card-icon {
-  width: 42px;
-  height: 42px;
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
-  background: #e8f5f1;
-  color: var(--color-brand-primary);
-  font-size: 20px;
-  font-weight: 800;
-}
-
-.hero-v2-card small {
-  display: block;
-  margin-bottom: 3px;
-  color: #899791;
-  font-size: 8px;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-}
-
-.hero-v2-card strong {
-  display: block;
-  color: #183229;
-  font-size: 13px;
-  line-height: 1.3;
-}
+/* -----------------------------
+   BOTTOM TOPIC STRIP
+   ----------------------------- */
 
 .hero-v2-bottom {
-  position: relative;
-  z-index: 2;
-  min-height: 78px;
-  margin-top: 68px;
+  width: min(calc(100% - 2.5rem), 1320px);
+
+  min-height: 72px;
+
+  margin: 0 auto;
+
+  padding: 0;
+
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 36px;
-  border-top: 1px solid #dfe9e5;
-  color: #74837d;
-  font-size: 10px;
+
+  gap: clamp(1.5rem, 4vw, 4rem);
+
+  overflow-x: auto;
+
+  border-top: 1px solid rgba(46, 69, 104, 0.12);
+
+  color: #6f7885;
+
+  font-size: 0.62rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+
+  letter-spacing: 0.09em;
   text-transform: uppercase;
+
+  scrollbar-width: none;
+}
+
+.hero-v2-bottom::-webkit-scrollbar {
+  display: none;
 }
 
 .hero-v2-bottom span {
+  flex: 0 0 auto;
+
   white-space: nowrap;
 }
 
-@media (max-width: 1020px) {
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 64rem) {
+
   .hero-v2-grid {
-    grid-template-columns: 1fr;
-    gap: 55px;
+    grid-template-columns:
+      minmax(0, 0.96fr)
+      minmax(0, 1.04fr);
+
+    min-height: calc(100svh - 88px);
+  }
+
+  .hero-v2-content {
+    min-height: 680px;
+
+    padding-left:
+      max(
+        2rem,
+        calc((100vw - 1320px) / 2)
+      );
+
+    padding-right:
+      clamp(2.5rem, 4vw, 4.5rem);
   }
 
   .hero-v2-visual {
-    max-width: 720px;
+    min-height: 680px;
   }
 
-  .hero-v2-card-top {
-    left: 20px;
-  }
-
-  .hero-v2-card-bottom {
-    right: 20px;
-  }
 }
 
-@media (max-width: 650px) {
-  .yiteism-hero-v2 {
-    padding-top: 60px;
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 40rem) {
+
+  .hero-v2-content {
+    padding-top: 4rem;
+    padding-bottom: 3.5rem;
   }
 
   .hero-v2-content h1 {
-    font-size: clamp(46px, 14vw, 64px);
-  }
-
-  .hero-v2-description {
-    font-size: 15px;
+    font-size: clamp(3rem, 15vw, 4.2rem);
   }
 
   .hero-v2-actions {
-    flex-direction: column;
+    display: grid;
   }
 
   .hero-v2-primary,
@@ -1314,41 +1407,31 @@
   }
 
   .hero-v2-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 0.5rem;
   }
 
   .hero-v2-stats div {
-    margin: 0;
-    padding-right: 8px;
+    padding-right: 0.5rem;
   }
 
   .hero-v2-stats strong {
-    font-size: 18px;
+    font-size: 1.2rem;
   }
 
-  .hero-v2-photo {
-    min-height: 440px;
-    border-radius: 22px;
+  .hero-v2-stats span {
+    font-size: 0.52rem;
   }
 
-  .hero-v2-card-top {
-    top: 45px;
-    left: 14px;
-  }
-
-  .hero-v2-card-bottom {
-    right: 14px;
-    bottom: 65px;
+  .hero-v2-visual {
+    min-height: 470px;
   }
 
   .hero-v2-bottom {
-    overflow-x: auto;
-    justify-content: flex-start;
-    gap: 42px;
-    padding-right: 20px;
+    width: calc(100% - 2.5rem);
+
+    gap: 2.25rem;
   }
+
 }
 
 /* YITEISM HERO V2 END */
@@ -3896,7 +3979,7 @@
   <div class="hero-v2-glow hero-v2-glow-one"></div>
   <div class="hero-v2-glow hero-v2-glow-two"></div>
 
-  <div class="container hero-v2-grid">
+  <div class="hero-v2-grid">
 
     <div class="hero-v2-content">
 
@@ -4010,27 +4093,6 @@
 
 </section>
 
-
-          <div class="hero-trust">
-            <span>Registered NGO in Tanzania</span>
-            <span>Youth-led organization</span>
-            <span>Community-driven impact</span>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="hero-photo"></div>
-
-          <div class="floating-card">
-            <strong>Practical skills. Real opportunities.</strong>
-            <p>
-              From STEM workshops to mentorship, sustainable energy and youth
-              opportunity programmes.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="stats">
       <div class="container stats-grid">
